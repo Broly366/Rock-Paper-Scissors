@@ -6,6 +6,8 @@
     </head>
     <body>
     <script>
+
+        //This Function returns a random index of the choice array 
         function getComputerChoice() {
             let choices = ["rock", "paper", "scissors"];
 
@@ -15,9 +17,9 @@
         let computer = undefined;
         let user = undefined;
         let draw = undefined;
-        function round(playerSelection, computerSelection) {       
-            
 
+        //This function evaluates the playerSelection and the computer selection and assigns to the winner a string 
+        function round(playerSelection, computerSelection) {       
             if (playerSelection === "rock" && computerSelection === "paper") {
                 console.log( "You Lose! Paper beats Rock");
 
@@ -63,6 +65,11 @@
         let compCounter = 0;
         let userCounter = 0;
         let drawCounter = 0;
+        
+        /*this funtion loops 5 times. It first reset the computer, user and draw variables and it asks for a prompt.
+        then it calls the round function to evaluate the choices of the player and the computer and it assigns the point.
+        after 5 games a winner is declared.
+        */
         function game() {
             for (let i = 0; i < 5; i++) {
                 computer = undefined;
