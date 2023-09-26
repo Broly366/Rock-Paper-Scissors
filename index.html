@@ -65,6 +65,10 @@
         let drawCounter = 0;
         function game() {
             for (let i = 0; i < 5; i++) {
+                computer = undefined;
+                user = undefined;
+                draw = undefined;
+                
                 let userChoice = (prompt("What's your choice?").toLowerCase());
 
                 console.log(round(userChoice, getComputerChoice()));
@@ -86,6 +90,8 @@
                 return "You Won!!!!!! Yeeeeeeeeee!!";
             }
         }
+
+        console.log(game());
     </script>
     </body>
 </html>
