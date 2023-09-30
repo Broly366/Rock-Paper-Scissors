@@ -16,8 +16,10 @@ body {
 
 button {
     border-radius: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #container {
-    
+    gap: 12px;
 }

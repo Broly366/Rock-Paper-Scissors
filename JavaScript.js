@@ -6,18 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return choices[Math.floor(Math.random() * choices.length)];
         };
 
-        let computer = undefined;
-        let user = undefined;
-        let draw = undefined;
+        
 
         let roundCount = 0;
-
+        //function that counts the times the function round is called and calls 2 functions if the value is 5
         function incrementRoundCount() {
             roundCount++;
-            if ( roundCount  % 5 === 0) {
+
+            const numberOfGames = 5;
+            
+            if ( roundCount % numberOfGames === 0) {
                 endResults();
                 resetCounters();
-            }
+            };
         };
                 
         let compCounter = 0;
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
         const container = document.querySelector("#container");
+        
         
         const rock = document.createElement("button");
         rock.textContent = "rock";
@@ -42,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         rock.addEventListener('click', () => {
             return round(rock.textContent,getComputerChoice());
-            
         })
 
         paper.addEventListener('click', () => {
@@ -74,6 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //This function evaluates the playerSelection and the computer selection and assigns to the winner a string 
         function round(playerSelection, computerSelection) {       
+
+            let computer = undefined;
+            let user = undefined;
+            let draw = undefined;
+
             if (playerSelection === "rock" && computerSelection === "paper") {
                 para.textContent = "You Lose! Your choice was Rock and the computer chose Paper!";
 
@@ -143,12 +149,13 @@ document.addEventListener("DOMContentLoaded", function () {
             incrementRoundCount();
         };
 
+        //function that give paraThree different textContent regarding the outcome of the game
         function endResults () {
             if (compCounter > userCounter) {
                 paraThree.textContent = "The Computer Won :(";
             } else if(compCounter < userCounter) {
                 paraThree.textContent = "You Won!!!!!! Yeeeeeeeeee!! :D";
-            } else if(compCounter = userCounter) {
+            } else if(compCounter === userCounter) {
                 paraThree.textContent = "It's a draw! You'll win next time!";
             };
         }
