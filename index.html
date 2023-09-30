@@ -3,102 +3,15 @@
     <head>
         <meta charset='UTF-8'/>
         <title>Some Web Page</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <script>
-
-        //This Function returns a random index of the choice array 
-        function getComputerChoice() {
-            let choices = ["rock", "paper", "scissors"];
-
-            return choices[Math.floor(Math.random() * choices.length)];
-        };
-
-        let computer = undefined;
-        let user = undefined;
-        let draw = undefined;
-
-        //This function evaluates the playerSelection and the computer selection and assigns to the winner a string 
-        function round(playerSelection, computerSelection) {       
-            if (playerSelection === "rock" && computerSelection === "paper") {
-                console.log( "You Lose! Paper beats Rock");
-
-                computer = "won";
-            }else if (playerSelection === "rock" && computerSelection === "scissors") {
-                console.log( "You Won! Rock beats scissors");
-
-                user = "won";
-            }else if (playerSelection === "rock" && computerSelection === "rock") {
-                console.log( "It's a Draw!");
-
-                draw = "draw";
-            }else if (playerSelection === "paper" && computerSelection === "paper") {
-                console.log( "It's a Draw!");
-
-                draw = "draw";
-            }else if (playerSelection === "paper" && computerSelection === "scissors") {
-                console.log( "You Lose! scissors beats paper");
-
-                computer = "won";
-            }else if (playerSelection === "paper" && computerSelection === "rock") {
-                console.log("You Won! paper beats rock");
-
-                user = "won";
-            }else if (playerSelection === "scissors" && computerSelection === "paper") {
-                console.log( "You Won! scissors beats paper");
-
-                user = "won";
-            }else if (playerSelection === "scissors" && computerSelection === "scissors") {
-                console.log("It's a Draw!");
-
-                draw = "draw";
-            }else if (playerSelection === "scissors" && computerSelection === "rock") {
-                console.log( "You Lose! rock beats scissors");
-
-                computer = "won";
-            } else {
-                return "Wrong Choice! Choose rock, paper or scissors."
-            }
-        };
-
-        
-        let compCounter = 0;
-        let userCounter = 0;
-        let drawCounter = 0;
-        
-        /*this funtion loops 5 times. It first reset the computer, user and draw variables and it asks for a prompt.
-        then it calls the round function to evaluate the choices of the player and the computer and it assigns the point.
-        after 5 games a winner is declared.
-        */
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                computer = undefined;
-                user = undefined;
-                draw = undefined;
-                
-                let userChoice = (prompt("Rock, paper, scissors: What's your choice?").toLowerCase());
-
-                console.log(round(userChoice, getComputerChoice()));
-
-                if (computer === "won") {
-                    compCounter++;
-                    console.log("Computer: " + compCounter + ", User: " + userCounter + ", Draws: " + drawCounter);
-                } else if (user === "won") {
-                    userCounter++;
-                    console.log("Computer: " + compCounter + ", User: " + userCounter + ", Draws: " + drawCounter);
-                } else {
-                    drawCounter++;
-                    console.log("Computer: " + compCounter + ", User: " + userCounter + ", Draws: " + drawCounter);
-                }
-            }
-            if (compCounter > userCounter) {
-                return "the computer Won";
-            } else if(compCounter < userCounter) {
-                return "You Won!!!!!! Yeeeeeeeeee!!";
-            }
-        }
-
-        console.log(game());
-    </script>
+        <h1>ROCK PAPER SCISSORS</h1>
+        <div class="container">
+            <div id="container"></div>
+            <div id="result"></div>
+            <div id="end-results"></div>
+        </div>
+    <script src="JavaScript.js" defer></script>
     </body>
 </html>
