@@ -145,11 +145,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function endResults () {
             if (compCounter > userCounter) {
-                paraThree.textContent = "the computer Won";
+                paraThree.textContent = "The Computer Won :(";
             } else if(compCounter < userCounter) {
-                paraThree.textContent = "You Won!!!!!! Yeeeeeeeeee!!";
+                paraThree.textContent = "You Won!!!!!! Yeeeeeeeeee!! :D";
             } else if(compCounter = userCounter) {
-                paraThree.textContent = "It's a draw!";
+                paraThree.textContent = "It's a draw! You'll win next time!";
             };
         }
 
